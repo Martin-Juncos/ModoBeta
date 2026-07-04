@@ -1,4 +1,3 @@
-import modoBetaSoft from "../assets/modobeta_soft.png";
 import { CTASection } from "../components/home/CTASection";
 import { Hero } from "../components/home/Hero";
 import { ProblemsPreview } from "../components/home/ProblemsPreview";
@@ -26,11 +25,20 @@ export function Home() {
             </Button>
           </SectionHeader>
           <div className="text-panel">
-            <img
-              className="about-preview__image"
-              src={modoBetaSoft}
-              alt="Pieza visual de ModoBeta sobre optimización y mejora continua"
-            />
+            <div className="about-preview__visual" aria-hidden="true">
+              <div className="about-preview__visual-header">
+                <span />
+                <span />
+                <span />
+              </div>
+              <div className="about-preview__visual-grid">
+                <span>Organización</span>
+                <strong>+42%</strong>
+                <span>Comunicación</span>
+                <strong>24/7</strong>
+              </div>
+              <div className="about-preview__visual-line" />
+            </div>
             <p>
               Creamos herramientas digitales simples, funcionales y adaptadas a cada
               realidad de trabajo. Nuestro objetivo no es imponer una plataforma
