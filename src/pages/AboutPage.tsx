@@ -1,3 +1,4 @@
+import equipoImage from "../assets/content/equipo.webp";
 import { CTASection } from "../components/home/CTASection";
 import { MissionVision } from "../components/sections/MissionVision";
 import { ValuesGrid } from "../components/sections/ValuesGrid";
@@ -18,8 +19,16 @@ export function AboutPage() {
 
       <section className="section">
         <div className="container prose-layout">
-          <div>
+          <div className="about-story">
             <h2>Tecnología que se adapta a cada realidad de trabajo</h2>
+            <figure className="about-story__image">
+              <img
+                src={equipoImage}
+                alt="Equipo de ModoBeta trabajando en soluciones digitales"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
           </div>
           <div className="prose-content">
             <p>
