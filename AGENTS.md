@@ -28,8 +28,11 @@ ModoBeta es una landing institucional multipagina para una empresa de desarrollo
 - `src/components/ui/`: componentes UI base (`Button`, `Card`, `SectionHeader`).
 - `src/data/`: datos editables del sitio: contacto, servicios, proyectos, problemas, clientes, valores y proceso.
 - `src/styles/global.css`: estilos globales, tokens visuales, layout, responsive, fondos y animaciones. Es la fuente principal del sistema visual.
-- `src/assets/`: imagenes que siguen en uso. Actualmente contiene logo y capturas reales de proyectos.
-- `public/`: assets publicos estaticos como favicon e iconos.
+- `src/assets/`: imagenes fuente y optimizadas organizadas por uso:
+  - `src/assets/brand/`: marca, logo fuente, favicon fuente y logo WebP usado por la UI.
+  - `src/assets/projects/`: capturas de proyectos optimizadas para la web.
+  - `src/assets/content/`: imagenes de contenido disponibles para uso futuro.
+- `public/`: assets publicos estaticos como favicons, manifest e iconos PWA.
 - `dist/`: salida generada por build. No editar manualmente.
 - `vercel.json`: configuracion de deploy en Vercel para Vite y fallback de React Router.
 
@@ -82,6 +85,8 @@ No se usa Tailwind, CSS Modules, backend ni base de datos en este repositorio.
   - Automatizacion
 - No volver a agregar etiquetas flotantes alrededor del dashboard del hero.
 - La capa decorativa `background-circuitry` vive en `Layout.tsx` y se mueve lento con scroll mediante `--circuit-scroll`.
+- El favicon de la pestana del navegador se genera desde `src/assets/brand/pestana.png`.
+- Los iconos instalables/PWA se generan desde `src/assets/brand/Logo.png`.
 
 ## Comandos Importantes
 
@@ -151,6 +156,8 @@ No modificar `vercel.json` sin verificar que las rutas internas sigan funcionand
   - `src/assets/organizacion2.png`
   - `src/assets/tablet dashboar*.png`
 - Antes de usar un asset, confirmar que existe en `src/assets/` o `public/`.
+- Usar WebP optimizado para imagenes importadas por React cuando sea posible.
+- Mantener `src/assets/brand/Logo.png` como fuente de iconos instalables y `src/assets/brand/pestana.png` como fuente de favicon.
 - Mantener el formulario/contacto orientado a WhatsApp mientras no exista backend.
 - Evitar textos que prometan funcionalidades sensibles no implementadas, como seguridad avanzada, cumplimiento legal o integraciones productivas reales.
 - No cambiar datos de contacto sin confirmacion del usuario.

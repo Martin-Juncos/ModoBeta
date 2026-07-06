@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import logo from "../../assets/Logo.png";
+import logo from "../../assets/brand/logo.webp";
 import { contactInfo } from "../../data/contact";
 import { Button } from "../ui/Button";
 

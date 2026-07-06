@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/Logo.png";
+import logo from "../../assets/brand/logo.webp";
 import { contactInfo } from "../../data/contact";
 
 const navigationLinks = [
@@ -23,7 +23,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="container site-footer__grid">
         <div className="site-footer__brand">
-          <img src={logo} alt="ModoBeta" />
+          <img src={logo} alt="ModoBeta" loading="lazy" decoding="async" />
           <h2>ModoBeta</h2>
           <p>Software a medida para instituciones que trabajan con personas.</p>
         </div>

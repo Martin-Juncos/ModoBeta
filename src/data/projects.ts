@@ -1,5 +1,5 @@
-import clinicaImage from "../assets/clinica_home.png";
-import puentesImage from "../assets/puentes_home.png";
+import clinicaImage from "../assets/projects/clinica-home.webp";
+import puentesImage from "../assets/projects/puentes-home.webp";
 
 export const projects = [
   {

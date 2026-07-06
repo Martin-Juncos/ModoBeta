@@ -29,7 +29,7 @@ export function ProjectsGrid({ preview = false }: ProjectsGridProps) {
             <article className="project-card" key={project.title}>
               <div className="project-card__visual">
                 {project.image ? (
-                  <img src={project.image} alt={project.imageAlt} />
+                  <img src={project.image} alt={project.imageAlt} loading="lazy" decoding="async" />
                 ) : (
                   <div aria-hidden="true">
                     {/* Cuando haya capturas reales en src/assets, reemplazar este placeholder por una imagen importada. */}
