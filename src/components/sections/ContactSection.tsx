@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
+import { Camera, Globe, Mail, MapPin, MessageCircle, Send } from "lucide-react";
 import { contactInfo } from "../../data/contact";
 import { Button } from "../ui/Button";
 import { SectionHeader } from "../ui/SectionHeader";
@@ -20,6 +21,39 @@ const initialForm = {
   message: "",
 };
 
+const contactItems = [
+  {
+    label: "WhatsApp",
+    value: contactInfo.whatsappNumber,
+    href: contactInfo.whatsappLink,
+    external: true,
+    icon: MessageCircle,
+  },
+  {
+    label: "Email",
+    value: contactInfo.email,
+    href: `mailto:${contactInfo.email}`,
+    icon: Mail,
+  },
+  {
+    label: "Instagram",
+    value: contactInfo.instagramLabel,
+    href: contactInfo.instagram,
+    external: true,
+    icon: Camera,
+  },
+  {
+    label: "Ubicación",
+    value: contactInfo.location,
+    icon: MapPin,
+  },
+  {
+    label: "Sitio web",
+    value: contactInfo.domain,
+    icon: Globe,
+  },
+];
+
 type ContactSectionProps = {
   compact?: boolean;
 };
@@ -32,7 +66,7 @@ export function ContactSection({ compact = false }: ContactSectionProps) {
     setForm((currentForm) => ({ ...currentForm, [field]: value }));
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!form.name.trim() || !form.message.trim()) {
@@ -66,29 +100,34 @@ Mensaje: ${form.message}
             description="Contanos qué necesitás mejorar, ordenar o digitalizar. Podemos ayudarte a pensar una solución adecuada para tu institución, centro o práctica profesional."
           />
           <div className="contact-list">
-            <a href={contactInfo.whatsappLink} target="_blank" rel="noreferrer">
-              <strong>WhatsApp</strong>
-              <span>{contactInfo.whatsappNumber}</span>
-            </a>
-            <a href={`mailto:${contactInfo.email}`}>
-              <strong>Email</strong>
-              <span>{contactInfo.email}</span>
-            </a>
-            <a href={contactInfo.instagram} target="_blank" rel="noreferrer">
-              <strong>Instagram</strong>
-              <span>{contactInfo.instagramLabel}</span>
-            </a>
-            <div>
-              <strong>Ubicación</strong>
-              <span>{contactInfo.location}</span>
-            </div>
-            <div>
-              <strong>Sitio web</strong>
-              <span>{contactInfo.domain}</span>
-            </div>
+            {contactItems.map((item) => {
+              const ContactIcon = item.icon;
+              const content = (
+                <>
+                  <ContactIcon className="contact-list__icon" aria-hidden="true" strokeWidth={1.9} />
+                  <span>
+                    <strong>{item.label}</strong>
+                    <small>{item.value}</small>
+                  </span>
+                </>
+              );
+
+              return item.href ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noreferrer" : undefined}
+                >
+                  {content}
+                </a>
+              ) : (
+                <div key={item.label}>{content}</div>
+              );
+            })}
           </div>
           {compact ? (
-            <Button href={contactInfo.whatsappLink} newTab>
+            <Button href={contactInfo.whatsappLink} newTab icon={MessageCircle} iconPosition="left">
               Hablemos por WhatsApp
             </Button>
           ) : null}
@@ -161,7 +200,7 @@ Mensaje: ${form.message}
               />
             </label>
             {status ? <p className="form-status" role="status">{status}</p> : null}
-            <Button type="submit">Enviar consulta</Button>
+            <Button type="submit" icon={Send}>Enviar consulta</Button>
           </form>
         ) : null}
       </div>

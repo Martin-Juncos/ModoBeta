@@ -1,3 +1,11 @@
+import {
+  Clock,
+  FileWarning,
+  MessageCircle,
+  MonitorCog,
+  Search,
+  Workflow,
+} from "lucide-react";
 import { problems } from "../../data/problems";
 import { Card } from "../ui/Card";
 import { SectionHeader } from "../ui/SectionHeader";
@@ -5,6 +13,15 @@ import { SectionHeader } from "../ui/SectionHeader";
 type ProblemsProps = {
   preview?: boolean;
 };
+
+const problemIcons = [
+  FileWarning,
+  Clock,
+  MessageCircle,
+  Workflow,
+  Search,
+  MonitorCog,
+];
 
 export function Problems({ preview = false }: ProblemsProps) {
   const visibleProblems = preview ? problems.slice(0, 4) : problems;
@@ -18,11 +35,12 @@ export function Problems({ preview = false }: ProblemsProps) {
           description="Muchas instituciones y profesionales trabajan todos los días con información valiosa, pero no siempre cuentan con herramientas adecuadas para gestionarla."
         />
         <div className="grid grid--3">
-          {visibleProblems.map((problem) => (
+          {visibleProblems.map((problem, index) => (
             <Card
               key={problem.title}
               title={problem.title}
               description={problem.description}
+              icon={problemIcons[index % problemIcons.length]}
             />
           ))}
         </div>

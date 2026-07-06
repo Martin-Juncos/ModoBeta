@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { ExternalLink, Folder, MessageCircle } from "lucide-react";
 import { projects } from "../../data/projects";
 import { Button } from "../ui/Button";
 import { SectionHeader } from "../ui/SectionHeader";
@@ -19,7 +19,7 @@ export function ProjectsGrid({ preview = false }: ProjectsGridProps) {
           description="Cada proyecto nos permitió comprender necesidades reales y convertirlas en soluciones digitales concretas."
         >
           {preview ? (
-            <Button to="/proyectos" variant="secondary">
+            <Button to="/proyectos" variant="secondary" icon={Folder}>
               Ver proyectos
             </Button>
           ) : null}
@@ -51,13 +51,13 @@ export function ProjectsGrid({ preview = false }: ProjectsGridProps) {
                   ))}
                 </ul>
                 {project.external ? (
-                  <Button href={project.url} newTab variant="secondary">
+                  <Button href={project.url} newTab variant="secondary" icon={ExternalLink}>
                     Ver proyecto
                   </Button>
                 ) : (
-                  <Link className="button button--secondary" to={project.url}>
+                  <Button to={project.url} variant="secondary" icon={MessageCircle}>
                     Consultar
-                  </Link>
+                  </Button>
                 )}
               </div>
             </article>

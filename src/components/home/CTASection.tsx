@@ -1,3 +1,4 @@
+import { MessageCircle, Send } from "lucide-react";
 import { contactInfo } from "../../data/contact";
 import { Button } from "../ui/Button";
 
@@ -14,10 +15,10 @@ export function CTASection() {
           </p>
         </div>
         <div className="cta-section__actions">
-          <Button href={contactInfo.whatsappLink} newTab>
+          <Button href={contactInfo.whatsappLink} newTab icon={MessageCircle} iconPosition="left">
             Hablemos por WhatsApp
           </Button>
-          <Button to="/contacto" variant="secondary">
+          <Button to="/contacto" variant="secondary" icon={Send}>
             Solicitar una propuesta
           </Button>
         </div>

@@ -1,3 +1,4 @@
+import { CalendarDays, Cog, FileText, MessageSquare, PanelTop } from "lucide-react";
 import { contactInfo } from "../../data/contact";
 import { Button } from "../ui/Button";
 
@@ -14,10 +15,10 @@ export function Hero() {
             procesos, mejorar su comunicación y modernizar su gestión.
           </p>
           <div className="hero-section__actions">
-            <Button href={contactInfo.whatsappLink} newTab>
+            <Button href={contactInfo.whatsappLink} newTab icon={MessageSquare} iconPosition="left">
               Hablemos de tu proyecto
             </Button>
-            <Button to="/soluciones" variant="secondary">
+            <Button to="/soluciones" variant="secondary" icon={PanelTop}>
               Ver soluciones
             </Button>
           </div>
@@ -37,26 +38,41 @@ export function Hero() {
 
             <div className="dashboard-modules">
               <div className="dashboard-module dashboard-module--agenda">
-                <span>Agenda</span>
+                <span>
+                  <CalendarDays className="dashboard-module__icon" aria-hidden="true" strokeWidth={2} />
+                  Agenda
+                </span>
                 <strong>24</strong>
               </div>
               <div className="dashboard-module dashboard-module--informes">
-                <span>Informes</span>
+                <span>
+                  <FileText className="dashboard-module__icon" aria-hidden="true" strokeWidth={2} />
+                  Informes
+                </span>
                 <strong>18</strong>
               </div>
               <div className="dashboard-module dashboard-module--mensajeria">
-                <span>Mensajería</span>
+                <span>
+                  <MessageSquare className="dashboard-module__icon" aria-hidden="true" strokeWidth={2} />
+                  Mensajería
+                </span>
                 <strong>36</strong>
               </div>
               <div className="dashboard-module dashboard-module--automatizacion">
-                <span>Automatización</span>
+                <span>
+                  <Cog className="dashboard-module__icon" aria-hidden="true" strokeWidth={2} />
+                  Automatización
+                </span>
                 <strong>12</strong>
               </div>
             </div>
 
             <div className="dashboard-stage">
               <div className="dashboard-scene dashboard-scene--agenda">
-                <div className="scene-title">Agenda</div>
+                <div className="scene-title">
+                  <CalendarDays className="scene-title__icon" aria-hidden="true" strokeWidth={2} />
+                  Agenda
+                </div>
                 <div className="calendar-card">
                   <div className="calendar-card__month">Julio</div>
                   <div className="calendar-card__grid">
@@ -73,7 +89,10 @@ export function Hero() {
               </div>
 
               <div className="dashboard-scene dashboard-scene--informes">
-                <div className="scene-title">Informes</div>
+                <div className="scene-title">
+                  <FileText className="scene-title__icon" aria-hidden="true" strokeWidth={2} />
+                  Informes
+                </div>
                 <div className="report-flow">
                   <div className="report-page report-page--source">
                     <i />
@@ -91,7 +110,10 @@ export function Hero() {
               </div>
 
               <div className="dashboard-scene dashboard-scene--mensajeria">
-                <div className="scene-title">Mensajería</div>
+                <div className="scene-title">
+                  <MessageSquare className="scene-title__icon" aria-hidden="true" strokeWidth={2} />
+                  Mensajería
+                </div>
                 <div className="message-thread">
                   <span className="message-bubble message-bubble--in">¿Confirmamos el turno?</span>
                   <span className="message-bubble message-bubble--out">Sí, queda agendado.</span>
@@ -100,10 +122,13 @@ export function Hero() {
               </div>
 
               <div className="dashboard-scene dashboard-scene--automatizacion">
-                <div className="scene-title">Automatización</div>
+                <div className="scene-title">
+                  <Cog className="scene-title__icon" aria-hidden="true" strokeWidth={2} />
+                  Automatización
+                </div>
                 <div className="automation-flow">
                   <div className="gear-shape">
-                    <span />
+                    <Cog className="gear-shape__icon" aria-hidden="true" strokeWidth={1.8} />
                   </div>
                   <div className="automation-line automation-line--one" />
                   <div className="automation-line automation-line--two" />

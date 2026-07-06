@@ -42,6 +42,7 @@ ModoBeta es una landing institucional multipagina para una empresa de desarrollo
 - Vite
 - TypeScript
 - React Router DOM
+- Lucide React para iconografia SVG
 - CSS global moderno
 - Deploy preparado para Vercel
 
@@ -57,6 +58,9 @@ No se usa Tailwind, CSS Modules, backend ni base de datos en este repositorio.
 - Mantener paginas delgadas y delegar secciones en `src/components/`.
 - Mantener datos editables en `src/data/` cuando sean contenido, listas, contactos o proyectos.
 - Usar los componentes existentes (`Button`, `Card`, `SectionHeader`) antes de crear variantes nuevas.
+- Usar iconos de `lucide-react` cuando ayuden a escanear acciones, navegacion, tarjetas o estados visuales.
+- Pasar iconos a `Button` mediante la prop `icon` y a `Card` mediante la prop `icon` antes de crear markup nuevo.
+- Marcar iconos puramente decorativos con `aria-hidden="true"`.
 - Mantener estilos en `src/styles/global.css` siguiendo las clases existentes tipo BEM:
   - `bloque`
   - `bloque__elemento`
@@ -70,6 +74,7 @@ No se usa Tailwind, CSS Modules, backend ni base de datos en este repositorio.
   - `--color-accent-hover: #ffea00`
 - Las animaciones deben ser sobrias, funcionales y respetar `prefers-reduced-motion`.
 - Evitar animar demasiados elementos a la vez.
+- Evitar mezclar otra libreria de iconos salvo pedido explicito o necesidad clara.
 
 ## UI Y Diseño
 

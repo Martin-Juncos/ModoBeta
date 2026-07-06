@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
+import type { LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
@@ -12,6 +13,8 @@ type ButtonProps = {
   newTab?: boolean;
   type?: "button" | "submit" | "reset";
   onClick?: ButtonHTMLAttributes<HTMLButtonElement>["onClick"];
+  icon?: LucideIcon;
+  iconPosition?: "left" | "right";
   "aria-label"?: string;
 };
 
@@ -24,14 +27,27 @@ export function Button({
   newTab = false,
   type = "button",
   onClick,
+  icon: Icon,
+  iconPosition = "right",
   "aria-label": ariaLabel,
 }: ButtonProps) {
   const buttonClassName = `button button--${variant} ${className}`.trim();
+  const content = (
+    <>
+      {Icon && iconPosition === "left" ? (
+        <Icon className="button__icon" aria-hidden="true" strokeWidth={2} />
+      ) : null}
+      <span className="button__label">{children}</span>
+      {Icon && iconPosition === "right" ? (
+        <Icon className="button__icon" aria-hidden="true" strokeWidth={2} />
+      ) : null}
+    </>
+  );
 
   if (to) {
     return (
       <Link className={buttonClassName} to={to} aria-label={ariaLabel}>
-        {children}
+        {content}
       </Link>
     );
   }
@@ -45,7 +61,7 @@ export function Button({
         rel={newTab ? "noreferrer" : undefined}
         aria-label={ariaLabel}
       >
-        {children}
+        {content}
       </a>
     );
   }
@@ -57,7 +73,7 @@ export function Button({
       onClick={onClick}
       aria-label={ariaLabel}
     >
-      {children}
+      {content}
     </button>
   );
 }

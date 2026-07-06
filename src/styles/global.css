@@ -299,6 +299,7 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 9px;
   min-height: 46px;
   max-width: 100%;
   padding: 12px 18px;
@@ -318,6 +319,21 @@ p {
 
 .button:hover {
   transform: translateY(-2px);
+}
+
+.button__label {
+  min-width: 0;
+}
+
+.button__icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  transition: transform 180ms ease;
+}
+
+.button:hover .button__icon {
+  transform: translateX(2px);
 }
 
 .button--primary {
@@ -400,6 +416,7 @@ p {
 .site-nav__link {
   display: inline-flex;
   align-items: center;
+  gap: 7px;
   min-height: 40px;
   padding: 8px 12px;
   color: var(--color-muted);
@@ -418,6 +435,14 @@ p {
 
 .site-nav__link--active {
   box-shadow: inset 0 -2px 0 var(--color-primary);
+}
+
+.site-nav__icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  color: var(--color-primary);
+  opacity: 0.84;
 }
 
 .site-header__actions {
@@ -446,6 +471,12 @@ p {
   height: 2px;
   background: var(--color-text);
   border-radius: 999px;
+}
+
+.menu-button__icon {
+  width: 22px;
+  height: 22px;
+  color: var(--color-primary);
 }
 
 .hero-section {
@@ -559,10 +590,20 @@ p {
 }
 
 .dashboard-module span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
   min-height: 28px;
   color: var(--color-muted);
   font-size: 12px;
   line-height: 1.25;
+}
+
+.dashboard-module__icon {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+  color: var(--color-primary);
 }
 
 .dashboard-module strong {
@@ -644,9 +685,18 @@ p {
   top: 14px;
   left: 18px;
   z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   color: var(--color-primary);
   font-size: 14px;
   font-weight: 800;
+}
+
+.scene-title__icon {
+  width: 16px;
+  height: 16px;
+  color: var(--color-accent);
 }
 
 .calendar-card,
@@ -838,6 +888,9 @@ p {
   position: absolute;
   top: 50%;
   left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 66px;
   height: 66px;
   border: 2px dashed var(--color-primary);
@@ -847,11 +900,10 @@ p {
   animation: gear-spin 4s linear infinite;
 }
 
-.gear-shape span {
-  position: absolute;
-  inset: 19px;
-  border: 2px solid var(--color-accent);
-  border-radius: 999px;
+.gear-shape__icon {
+  width: 34px;
+  height: 34px;
+  color: var(--color-accent);
 }
 
 .automation-block {
@@ -1313,6 +1365,33 @@ p {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 18px;
+  color: var(--color-primary);
+  background:
+    linear-gradient(135deg, rgba(0, 229, 255, 0.16), rgba(255, 214, 0, 0.08)),
+    rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 22px rgba(0, 229, 255, 0.08);
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
 .card {
   min-height: 100%;
   padding: 24px;
@@ -1331,6 +1410,13 @@ p {
   transform: translateY(-4px);
   border-color: var(--color-border);
   box-shadow: var(--shadow-glow);
+}
+
+.card:hover .icon-badge {
+  color: var(--color-accent);
+  border-color: var(--color-border-accent);
+  box-shadow: 0 0 28px rgba(255, 214, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 .card p {
@@ -1463,7 +1549,7 @@ p {
 
 .process-step {
   display: grid;
-  grid-template-columns: 64px minmax(0, 1fr);
+  grid-template-columns: 70px minmax(0, 1fr);
   gap: 20px;
   padding: 22px;
   background: rgba(255, 255, 255, 0.04);
@@ -1471,16 +1557,29 @@ p {
   border-radius: var(--radius-lg);
 }
 
-.process-step > span {
+.process-step__marker {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 54px;
-  height: 54px;
+  flex-direction: column;
+  width: 62px;
+  height: 62px;
+  gap: 3px;
   color: var(--color-ink-on-primary);
   background: var(--color-primary);
   border-radius: var(--radius-sm);
   font-weight: 800;
+  box-shadow: 0 0 24px rgba(0, 229, 255, 0.12);
+}
+
+.process-step__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.process-step__marker strong {
+  font-size: 14px;
+  line-height: 1;
 }
 
 .process-step p {
@@ -1497,10 +1596,19 @@ p {
   min-height: 96px;
   display: flex;
   align-items: center;
+  gap: 13px;
   padding: 22px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--color-border-soft);
   border-radius: var(--radius-lg);
+}
+
+.client-item__icon {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  color: var(--color-primary);
+  filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.16));
 }
 
 .client-item span {
@@ -1585,7 +1693,9 @@ p {
 .contact-list a,
 .contact-list div {
   display: grid;
-  gap: 4px;
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
   padding: 16px;
   color: inherit;
   background: rgba(255, 255, 255, 0.04);
@@ -1594,12 +1704,32 @@ p {
   text-decoration: none;
 }
 
+.contact-list a:hover {
+  border-color: var(--color-border);
+  background: var(--color-primary-soft);
+}
+
+.contact-list__icon {
+  width: 22px;
+  height: 22px;
+  justify-self: center;
+  color: var(--color-primary);
+}
+
+.contact-list a > span,
+.contact-list div > span {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
 .contact-list strong {
   color: var(--color-primary);
 }
 
-.contact-list span {
+.contact-list small {
   color: var(--color-text-soft);
+  font-size: 14px;
   overflow-wrap: anywhere;
 }
 
@@ -1691,8 +1821,17 @@ textarea:focus {
 }
 
 .site-footer h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 18px;
   color: var(--color-primary);
+}
+
+.site-footer__heading-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--color-accent);
 }
 
 .footer-list {
@@ -1704,13 +1843,25 @@ textarea:focus {
   list-style: none;
 }
 
+.footer-list li,
 .footer-list a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: inherit;
   text-decoration: none;
 }
 
 .footer-list a:hover {
   color: var(--color-primary);
+}
+
+.footer-list__icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  color: var(--color-primary);
+  opacity: 0.82;
 }
 
 .site-footer__bottom {

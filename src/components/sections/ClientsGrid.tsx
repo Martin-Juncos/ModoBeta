@@ -1,5 +1,22 @@
+import {
+  Building2,
+  GraduationCap,
+  HeartHandshake,
+  Landmark,
+  School,
+  Users,
+} from "lucide-react";
 import { clients } from "../../data/clients";
 import { SectionHeader } from "../ui/SectionHeader";
+
+const clientIcons = [
+  School,
+  HeartHandshake,
+  Users,
+  Building2,
+  GraduationCap,
+  Landmark,
+];
 
 export function ClientsGrid() {
   return (
@@ -11,11 +28,16 @@ export function ClientsGrid() {
           description="Trabajamos con proyectos que necesitan orden, comunicación clara y herramientas digitales adaptadas a su forma de funcionar."
         />
         <div className="client-grid">
-          {clients.map((client) => (
-            <article className="client-item" key={client}>
-              <span>{client}</span>
-            </article>
-          ))}
+          {clients.map((client, index) => {
+            const ClientIcon = clientIcons[index % clientIcons.length];
+
+            return (
+              <article className="client-item" key={client}>
+                <ClientIcon className="client-item__icon" aria-hidden="true" strokeWidth={1.9} />
+                <span>{client}</span>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
