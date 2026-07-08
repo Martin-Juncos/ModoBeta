@@ -1,6 +1,7 @@
-import { MessageCircle, Send } from "lucide-react";
+﻿import { MessageCircle, Send } from "lucide-react";
 import { contactInfo } from "../../data/contact";
 import { Button } from "../ui/Button";
+import { ScrambleTitle } from "../ui/ScrambleTitle";
 
 export function CTASection() {
   return (
@@ -8,7 +9,9 @@ export function CTASection() {
       <div className="container cta-section__inner">
         <div>
           <span className="eyebrow">Próximo paso</span>
-          <h2>¿Tu institución necesita ordenar sus procesos?</h2>
+          <h2>
+            <ScrambleTitle text="¿Tu institución necesita ordenar sus procesos?" />
+          </h2>
           <p>
             Podemos ayudarte a transformar tareas dispersas en una solución digital
             clara, profesional y hecha a medida.

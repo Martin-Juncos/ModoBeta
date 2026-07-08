@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { ScrambleTitle } from "./ScrambleTitle";
 
 type SectionHeaderProps = {
   eyebrow?: string;
@@ -18,7 +19,9 @@ export function SectionHeader({
   return (
     <div className={`section-header section-header--${align}`}>
       {eyebrow ? <span className="eyebrow">{eyebrow}</span> : null}
-      <h2>{title}</h2>
+      <h2>
+        <ScrambleTitle text={title} />
+      </h2>
       {description ? <p>{description}</p> : null}
       {children ? <div className="section-header__actions">{children}</div> : null}
     </div>

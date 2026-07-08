@@ -1,14 +1,21 @@
 import { CalendarDays, Cog, FileText, MessageSquare, PanelTop } from "lucide-react";
 import { contactInfo } from "../../data/contact";
 import { Button } from "../ui/Button";
+import { ScrambleTitle } from "../ui/ScrambleTitle";
+
+const HERO_TITLE = "Software a medida para instituciones que trabajan con personas";
 
 export function Hero() {
+  const title = HERO_TITLE;
+
   return (
     <section className="hero-section">
       <div className="container hero-section__grid">
         <div className="hero-section__content">
           <span className="eyebrow">Software pensado para las personas que trabajan con personas</span>
-          <h1>Software a medida para instituciones que trabajan con personas</h1>
+          <h1>
+            <ScrambleTitle text={title} />
+          </h1>
           <p>
             En ModoBeta desarrollamos soluciones digitales para centros educativos,
             espacios interdisciplinarios y profesionales que necesitan ordenar

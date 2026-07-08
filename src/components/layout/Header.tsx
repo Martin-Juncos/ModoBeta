@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Blocks, Folder, Home, Menu, MessageCircle, Users, X } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import devsWordmark from "../../assets/brand/devs-co-header-wordmark.png";
+import headerWordmark from "../../assets/brand/modobeta-header-wordmark.png";
 import logo from "../../assets/brand/logo.webp";
 import { contactInfo } from "../../data/contact";
 import { Button } from "../ui/Button";
@@ -25,8 +27,21 @@ export function Header() {
     <header className="site-header">
       <div className="site-header__inner">
         <Link className="brand" to="/" aria-label="Ir al inicio de ModoBeta">
-          <img src={logo} alt="ModoBeta" />
-          <span>ModoBeta</span>
+          <img className="brand__icon" src={logo} alt="" aria-hidden="true" />
+          <span className="brand__wordmark-stack" aria-hidden="true">
+            <img
+              className="brand__wordmark brand__wordmark--modo"
+              src={headerWordmark}
+              alt=""
+              decoding="async"
+            />
+            <img
+              className="brand__wordmark brand__wordmark--devs"
+              src={devsWordmark}
+              alt=""
+              decoding="async"
+            />
+          </span>
         </Link>
 
         <nav
