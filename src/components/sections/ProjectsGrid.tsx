@@ -2,6 +2,7 @@ import { ExternalLink, Folder, MessageCircle } from "lucide-react";
 import { projects } from "../../data/projects";
 import { Button } from "../ui/Button";
 import { SectionHeader } from "../ui/SectionHeader";
+import { ProjectMediaCarousel } from "./ProjectMediaCarousel";
 
 type ProjectsGridProps = {
   preview?: boolean;
@@ -28,7 +29,9 @@ export function ProjectsGrid({ preview = false }: ProjectsGridProps) {
           {visibleProjects.map((project) => (
             <article className="project-card" key={project.title}>
               <div className="project-card__visual">
-                {project.image ? (
+                {project.images.length ? (
+                  <ProjectMediaCarousel images={project.images} title={project.title} />
+                ) : project.image ? (
                   <img src={project.image} alt={project.imageAlt} loading="lazy" decoding="async" />
                 ) : (
                   <div aria-hidden="true">
