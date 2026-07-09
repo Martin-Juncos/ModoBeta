@@ -1,5 +1,6 @@
 import {
   Blocks,
+  BriefcaseBusiness,
   Camera,
   Folder,
   Globe,
@@ -49,6 +50,12 @@ const contactLinks = [
     href: contactInfo.instagram,
     external: true,
     icon: Camera,
+  },
+  {
+    label: "LinkedIn",
+    href: contactInfo.linkedin,
+    external: true,
+    icon: BriefcaseBusiness,
   },
   {
     label: contactInfo.location,

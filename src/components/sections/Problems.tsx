@@ -25,6 +25,7 @@ const problemIcons = [
 
 export function Problems({ preview = false }: ProblemsProps) {
   const visibleProblems = preview ? problems.slice(0, 4) : problems;
+  const gridClassName = preview ? "grid grid--2" : "grid grid--3";
 
   return (
     <section className="section">
@@ -34,7 +35,7 @@ export function Problems({ preview = false }: ProblemsProps) {
           title="Problemas que ayudamos a solucionar"
           description="Muchas instituciones y profesionales trabajan todos los días con información valiosa, pero no siempre cuentan con herramientas adecuadas para gestionarla."
         />
-        <div className="grid grid--3">
+        <div className={gridClassName}>
           {visibleProblems.map((problem, index) => (
             <Card
               key={problem.title}

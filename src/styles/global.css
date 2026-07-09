@@ -2219,13 +2219,8 @@ p {
 }
 
 .process-step__icon {
-  width: 20px;
-  height: 20px;
-}
-
-.process-step__marker strong {
-  font-size: 14px;
-  line-height: 1;
+  width: 28px;
+  height: 28px;
 }
 
 .process-step p {

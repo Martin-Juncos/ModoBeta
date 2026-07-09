@@ -27,7 +27,6 @@ export function WorkProcess({ preview = false }: WorkProcessProps) {
               <article className="process-step" key={item.step}>
                 <span className="process-step__marker">
                   <StepIcon className="process-step__icon" aria-hidden="true" strokeWidth={2} />
-                  <strong>{item.step}</strong>
                 </span>
                 <div>
                   <h3>{item.title}</h3>

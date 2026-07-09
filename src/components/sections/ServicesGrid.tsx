@@ -23,6 +23,7 @@ export function ServicesGrid({
   showImpacts = false,
 }: ServicesGridProps) {
   const visibleServices = preview ? services.slice(0, 4) : services;
+  const gridClassName = preview ? "grid grid--2" : "grid grid--3";
 
   return (
     <section className="section section--muted">
@@ -38,7 +39,7 @@ export function ServicesGrid({
             </Button>
           ) : null}
         </SectionHeader>
-        <div className="grid grid--3">
+        <div className={gridClassName}>
           {visibleServices.map((service, index) => (
             <Card
               key={service.title}

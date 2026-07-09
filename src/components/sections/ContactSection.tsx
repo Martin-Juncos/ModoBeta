@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Camera, Globe, Mail, MapPin, MessageCircle, Send } from "lucide-react";
+import { BriefcaseBusiness, Camera, Mail, MapPin, MessageCircle, Send } from "lucide-react";
 import { contactInfo } from "../../data/contact";
 import { Button } from "../ui/Button";
 import { SectionHeader } from "../ui/SectionHeader";
@@ -23,13 +23,6 @@ const initialForm = {
 
 const contactItems = [
   {
-    label: "WhatsApp",
-    value: contactInfo.whatsappNumber,
-    href: contactInfo.whatsappLink,
-    external: true,
-    icon: MessageCircle,
-  },
-  {
     label: "Email",
     value: contactInfo.email,
     href: `mailto:${contactInfo.email}`,
@@ -43,14 +36,16 @@ const contactItems = [
     icon: Camera,
   },
   {
+    label: "LinkedIn",
+    value: contactInfo.linkedinLabel,
+    href: contactInfo.linkedin,
+    external: true,
+    icon: BriefcaseBusiness,
+  },
+  {
     label: "Ubicación",
     value: contactInfo.location,
     icon: MapPin,
-  },
-  {
-    label: "Sitio web",
-    value: contactInfo.domain,
-    icon: Globe,
   },
 ];
 
