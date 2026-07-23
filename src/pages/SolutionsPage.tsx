@@ -1,12 +1,15 @@
 ﻿import { CTASection } from "../components/home/CTASection";
+import { Seo } from "../components/seo/Seo";
 import { ClientsGrid } from "../components/sections/ClientsGrid";
 import { Problems } from "../components/sections/Problems";
 import { ServicesGrid } from "../components/sections/ServicesGrid";
 import { ScrambleTitle } from "../components/ui/ScrambleTitle";
+import { pageSeo } from "../data/site";
 
 export function SolutionsPage() {
   return (
     <>
+      <Seo {...pageSeo.solutions} />
       <section className="page-hero">
         <div className="container page-hero__content">
           <span className="eyebrow">Soluciones digitales</span>

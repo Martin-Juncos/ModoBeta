@@ -5,7 +5,7 @@
 Este archivo define instrucciones locales para trabajar en el repositorio ModoBeta.
 Tiene prioridad sobre preferencias globales cuando una regla aplique especificamente a este proyecto.
 
-ModoBeta es una landing institucional multipagina para una empresa de desarrollo de software a medida. El objetivo principal del sitio es comunicar servicios, mostrar proyectos y llevar al usuario a contacto por WhatsApp, email o Instagram.
+ModoBeta es una landing institucional multipagina para un emprendimiento de desarrollo de software a medida. El objetivo principal del sitio es comunicar servicios, mostrar proyectos y llevar al usuario a contacto por WhatsApp, email, Instagram, Facebook o LinkedIn.
 
 ## Estructura Del Proyecto
 
@@ -171,6 +171,27 @@ No modificar `vercel.json` sin verificar que las rutas internas sigan funcionand
 ## Contexto Del Negocio
 
 ModoBeta desarrolla software a medida para instituciones y profesionales que trabajan con personas.
+
+Identidad institucional:
+
+- Nombre comercial: ModoBeta.
+- Denominacion institucional comunicable: ModoBeta Devs & Co.
+- No presentar ModoBeta Devs & Co. como razon social o nombre legal mientras no este formalmente registrado.
+- Texto seguro de referencia: "ModoBeta Devs & Co. es un emprendimiento de desarrollo de software fundado por Carlos Martin Juncos."
+- Ubicacion: Goya, Corrientes, Argentina.
+
+Redes oficiales:
+
+- Sitio web: https://modobeta.net.ar/
+- LinkedIn: https://www.linkedin.com/company/modobeta-devs-co/
+- Facebook: https://www.facebook.com/profile.php?id=61552469021480
+- Instagram: https://www.instagram.com/modobeta.ok/
+- Mantener estas redes en el sitio, footer y datos estructurados `sameAs` cuando se trabaje SEO.
+
+Reglas de confianza:
+
+- No inventar testimonios, nombres, valoraciones, metricas de resultados ni casos de exito cuantificados sin evidencia.
+- Los proyectos Puentes y Clinica San Rafael pueden mostrarse como trabajos realizados, sin atribuir declaraciones a clientes ni resultados no verificados.
 
 Audiencias principales:
 

@@ -45,6 +45,7 @@ export function ProjectMediaCarousel({ images, title }: ProjectMediaCarouselProp
   return (
     <div
       className="project-carousel"
+      role="group"
       aria-label={`Galería de imágenes de ${title}`}
       onBlur={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)}
@@ -71,7 +72,7 @@ export function ProjectMediaCarousel({ images, title }: ProjectMediaCarouselProp
 
       {hasMultipleImages ? (
         <>
-          <div className="project-carousel__controls" aria-label={`Controles de galería de ${title}`}>
+          <div className="project-carousel__controls" role="group" aria-label={`Controles de galería de ${title}`}>
             <button type="button" aria-label="Imagen anterior" onClick={goToPrevious}>
               <ChevronLeft aria-hidden="true" strokeWidth={2} />
             </button>
@@ -84,7 +85,7 @@ export function ProjectMediaCarousel({ images, title }: ProjectMediaCarouselProp
             <span>
               {activeIndex + 1}/{images.length}
             </span>
-            <div className="project-carousel__dots" aria-label={`Diapositivas de ${title}`}>
+            <div className="project-carousel__dots" role="group" aria-label={`Diapositivas de ${title}`}>
               {images.map((image, index) => (
                 <button
                   key={image.src}

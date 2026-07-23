@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { BriefcaseBusiness, Camera, Mail, MapPin, MessageCircle, Send } from "lucide-react";
+import { BriefcaseBusiness, Camera, Mail, MapPin, MessageCircle, Send, Share2 } from "lucide-react";
 import { contactInfo } from "../../data/contact";
 import { Button } from "../ui/Button";
 import { SectionHeader } from "../ui/SectionHeader";
@@ -34,6 +34,13 @@ const contactItems = [
     href: contactInfo.instagram,
     external: true,
     icon: Camera,
+  },
+  {
+    label: "Facebook",
+    value: contactInfo.facebookLabel,
+    href: contactInfo.facebook,
+    external: true,
+    icon: Share2,
   },
   {
     label: "LinkedIn",
@@ -81,7 +88,7 @@ Mensaje: ${form.message}
 `;
 
     const encodedMessage = encodeURIComponent(message);
-    window.open(`${contactInfo.whatsappBaseUrl}?text=${encodedMessage}`, "_blank");
+    window.open(`${contactInfo.whatsappBaseUrl}?text=${encodedMessage}`, "_blank", "noopener,noreferrer");
     setStatus("Consulta preparada. Se abrió WhatsApp con tu mensaje.");
   };
 
@@ -112,7 +119,7 @@ Mensaje: ${form.message}
                   key={item.label}
                   href={item.href}
                   target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noreferrer" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
                 >
                   {content}
                 </a>

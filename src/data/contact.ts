@@ -9,6 +9,8 @@ export const contactInfo = {
   email: "modo.beta.developer@gmail.com",
   instagram: "https://www.instagram.com/modobeta.ok/",
   instagramLabel: "@modobeta.ok",
+  facebook: "https://www.facebook.com/profile.php?id=61552469021480",
+  facebookLabel: "ModoBeta en Facebook",
   linkedin: "https://www.linkedin.com/company/modobeta-devs-co/",
   linkedinLabel: "ModoBeta en LinkedIn",
   location: "Goya, Corrientes, Argentina",

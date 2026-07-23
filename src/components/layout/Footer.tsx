@@ -10,6 +10,7 @@ import {
   MessageCircle,
   Navigation,
   PanelTop,
+  Share2,
   Users,
   Workflow,
 } from "lucide-react";
@@ -50,6 +51,12 @@ const contactLinks = [
     href: contactInfo.instagram,
     external: true,
     icon: Camera,
+  },
+  {
+    label: "Facebook",
+    href: contactInfo.facebook,
+    external: true,
+    icon: Share2,
   },
   {
     label: "LinkedIn",
@@ -134,7 +141,7 @@ export function Footer() {
                     <a
                       href={link.href}
                       target={link.external ? "_blank" : undefined}
-                      rel={link.external ? "noreferrer" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
                     >
                       {content}
                     </a>

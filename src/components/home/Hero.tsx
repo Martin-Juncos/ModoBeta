@@ -31,7 +31,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="hero-visual" aria-label="Panel visual de gestión digital">
+        <div className="hero-visual" role="img" aria-label="Panel visual de gestión digital">
           <div className="dashboard-mockup" aria-hidden="true">
             <div className="dashboard-mockup__bar">
               <span />

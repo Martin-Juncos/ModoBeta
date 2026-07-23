@@ -11,13 +11,16 @@ import { ProblemsPreview } from "../components/home/ProblemsPreview";
 import { ProjectsPreview } from "../components/home/ProjectsPreview";
 import { ServicesPreview } from "../components/home/ServicesPreview";
 import { WorkProcessPreview } from "../components/home/WorkProcessPreview";
+import { Seo } from "../components/seo/Seo";
 import { ContactSection } from "../components/sections/ContactSection";
 import { Button } from "../components/ui/Button";
 import { SectionHeader } from "../components/ui/SectionHeader";
+import { pageSeo } from "../data/site";
 
 export function Home() {
   return (
     <>
+      <Seo {...pageSeo.home} />
       <Hero />
 
       <section className="section about-preview">

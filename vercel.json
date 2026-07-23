@@ -4,9 +4,22 @@
   "installCommand": "npm ci",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/((?!assets/|favicon.ico|favicon-[0-9]+x[0-9]+\\.png|apple-touch-icon.png|manifest.webmanifest).*)",
+      "source": "/nosotros",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/soluciones",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/proyectos",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/contacto",
       "destination": "/index.html"
     }
   ]

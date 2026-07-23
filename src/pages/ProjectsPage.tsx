@@ -1,11 +1,14 @@
 ﻿import { CTASection } from "../components/home/CTASection";
+import { Seo } from "../components/seo/Seo";
 import { ProjectsGrid } from "../components/sections/ProjectsGrid";
 import { Button } from "../components/ui/Button";
 import { ScrambleTitle } from "../components/ui/ScrambleTitle";
+import { pageSeo } from "../data/site";
 
 export function ProjectsPage() {
   return (
     <>
+      <Seo {...pageSeo.projects} />
       <section className="page-hero">
         <div className="container page-hero__content">
           <span className="eyebrow">Proyectos realizados</span>

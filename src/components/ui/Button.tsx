@@ -58,7 +58,7 @@ export function Button({
         className={buttonClassName}
         href={href}
         target={newTab ? "_blank" : undefined}
-        rel={newTab ? "noreferrer" : undefined}
+        rel={newTab ? "noopener noreferrer" : undefined}
         aria-label={ariaLabel}
       >
         {content}

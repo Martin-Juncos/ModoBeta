@@ -1,12 +1,15 @@
 ﻿import equipoImage from "../assets/content/equipo.webp";
 import { CTASection } from "../components/home/CTASection";
+import { Seo } from "../components/seo/Seo";
 import { MissionVision } from "../components/sections/MissionVision";
 import { ValuesGrid } from "../components/sections/ValuesGrid";
 import { ScrambleTitle } from "../components/ui/ScrambleTitle";
+import { pageSeo } from "../data/site";
 
 export function AboutPage() {
   return (
     <>
+      <Seo {...pageSeo.about} />
       <section className="page-hero">
         <div className="container page-hero__content">
           <span className="eyebrow">Sobre ModoBeta</span>
